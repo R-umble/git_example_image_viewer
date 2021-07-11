@@ -19,3 +19,14 @@ bool BitmapImage::load(std::string name) {
 BitmapImage::~BitmapImage() {
     delete[] buffer;
 }
+
+bool BitmapImage::save(std::string name) {
+    // check it is a supported image file
+    std::string fileExt = name.substr(name.find_last_of(".") + 1);
+    if (fileExt == "jpg") {
+        // compress buffer
+        // save image file
+        return true;
+    }
+    return false;
+}
